@@ -11,6 +11,7 @@ def manufacturers():
     manufacturers = manufacturer_repository.select_all()
     return render_template("manufacturer_info/index.html", manufacturers=manufacturers)
 
+#create
 @manufacturers_blueprint.route("/manufacturer_info", methods=["POST"])
 def add_manufacturer():
     name = request.form["name"]
@@ -18,4 +19,10 @@ def add_manufacturer():
     info = request.form["info"]
     new_manufacturer = Manufacturer(name, contact_details, info)
     manufacturer_repository.save(new_manufacturer)
+    return redirect("/manufacturer_info")
+
+#delete
+@manufacturers_blueprint.route("/manufacturer_info/<id>/delete")
+def delete_manufacturer(id):
+    manufacturer_repository.delete(id)
     return redirect("/manufacturer_info")
