@@ -17,15 +17,31 @@
     </div>
 </section>
 
+{% endfor %}
+
 <section>
     <h2>ADD MANUFACTURER</h2>
     <div>
-        <form action="/manufacturer_info" method="POST"></form>
+        <form action="/manufacturer_info" method="POST">
+            <div>
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name">
+                <br>
+                <label for="contact_details">CONTACT DETAILS</label>
+                <input type="text" id="contact_details" name="contact_details">
+                <br>
+                <label for="info">INFO</label>
+                <input type="text" id="info" name="info">
+                <br>
+                <input type="submit">
+            </div>
+        
+        </form>
     </div>
 </section>
 
 
 
 
-{% endfor %}
+
 {% endblock %}
