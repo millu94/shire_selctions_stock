@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>MANUFACTURER INFO...</h1>
+
+{% for manufacturer in manufacturers %}
+
+<section>
+    <div>
+        <li><p>{{ manufacturer.name }}</p></li>
+        <p>{{ manufacturer.contact_details }}</p>
+        <p>{{ manufacturer.info }}</p>
+        <a href="/manufacturer_info/{{ manufacturer.id }}/edit">EDIT</a>
+        <form action="/manufacturer_info/{{ manufacturer.id }}/delete">
+            <input type="submit" value="DELETE">
+        </form>
+    </div>
+</section>
+
+<section>
+    <h2>ADD MANUFACTURER</h2>
+    <div>
+        <form action="/manufacturer_info" method="POST"></form>
+    </div>
+</section>
+
+
+
+
+{% endfor %}
+{% endblock %}
