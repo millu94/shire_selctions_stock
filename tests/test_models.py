@@ -6,7 +6,7 @@ class TestModels(unittest.TestCase):
     
     def setUp(self):
         self.manufacturer = Manufacturer("Push Print", "63 Townsend St, Glasgow", "Makes Stickers")
-        self.product = Product("SS_Logo", "Stickers", 1000, 280.50, 1.00, 2)
+        self.product = Product("SS_Logo", "Stickers", 1000, 280.50, 1.00, self.manufacturer.id)
 
     def test_product_has_name(self):
         self.assertEqual("SS_Logo", self.product.name)
@@ -24,7 +24,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(1.00, self.product.selling_price)
 
     def test_product_has_manufacturer_id(self):
-        self.assertEqual(2, self.product.manufacturer_id)
+        self.assertEqual(None , self.product.manufacturer_id)
 
     def test_manufacturer_has_name(self):
         self.assertEqual("Push Print", self.manufacturer.name)

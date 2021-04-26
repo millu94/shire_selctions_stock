@@ -12,7 +12,7 @@ CREATE TABLE products (
     id serial PRIMARY KEY,
     name VARCHAR(255),
     description VARCHAR(255),
-    stock_quantity INT,
+    quantity INT,
     buying_cost FLOAT,
     selling_price FLOAT,
     manufacturer_id INT REFERENCES manufacturers(id)
