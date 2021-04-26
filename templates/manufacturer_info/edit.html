@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>UPDATE MANUFACTURER</h1>
+
+<form action="/manufacturer_info/{{ manufacturer.id }}" method="POST">
+    <div>
+        <label for="name">NAME</label>
+        <input type="text" id="name" name="name" value="{{ manufacturer.name }}">
+        <br>
+        <label for="contact_details">CONTACT DETAILS</label>
+        <input type="text" id="contact_details" name="contact_details" value="{{ manufacturer.contact_details }}">
+        <br>
+        <label for="info">INFO</label>
+        <input type="info" id="info" name="info" value="{{ manufacturer.info }}">
+        <br>
+        <input type="submit" value="ENTER">
+    </div>
+
+
+</form>
+
+
+
+
+{% endblock %}

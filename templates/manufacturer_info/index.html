@@ -11,7 +11,7 @@
         <p>{{ manufacturer.contact_details }}</p>
         <p>{{ manufacturer.info }}</p>
         <a href="/manufacturer_info/{{ manufacturer.id }}/edit">EDIT</a>
-        <form action="/manufacturer_info/{{ manufacturer.id }}/delete">
+        <form action="/manufacturer_info/{{ manufacturer.id }}">
             <input type="submit" value="DELETE">
         </form>
     </div>
@@ -33,7 +33,7 @@
                 <label for="info">INFO</label>
                 <input type="text" id="info" name="info">
                 <br>
-                <input type="submit">
+                <input type="submit" value="ENTER">
             </div>
         
         </form>

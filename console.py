@@ -14,12 +14,18 @@ manufacturer_repository.save(manufacturer_1)
 manufacturer_2 = Manufacturer("Push Print", "hello@pushprint.net", "printing")
 manufacturer_repository.save(manufacturer_2)
 
+manufacturer_3 = Manufacturer("qwerty", "mnbvcxzasdfgh", "test")
+manufacturer_repository.save(manufacturer_3)
+
+
+
 
 product_1 = Product("Axor - High St. EP [SS004]", "Vinyl EP", 300, 850.50, 10, manufacturer_1.id)
 product_repository.save(product_1)
 
 product_2 = Product("SS Logo", "Sticker", 1000, 280.50, 1.00, manufacturer_2.id)
 product_repository.save(product_2)
+
 
 
 
