@@ -20,3 +20,16 @@ TUESDAY
 After the stand-up Craig shared with me a lab example with a working update function- "week_04/day_3/one_to_many_solution", after close inspection I realised that my select(id) function in manufacturers_repository.py was missing "result["id"]" in the values list, which would result in my update function (in the controller) returning an updated object with an "id" of none.
 
 As of 3.30pm I have got the add product tab working, now all that is left (in regards to the functions) is to set-up the edit/delete and start work on the styling.
+
+End of day: website is partially working- very easy to add/edit/delete manufacturers, adding products is okay but the drop down option for manufacturers is temperamental, updating with a different manufacturer id can sometimes break it. Overall the app works fine if you don't intentionally break it. I've also had problems with running the console.py file- I hadn't ran it in a while as I had just been using flask run to test the functionality, but when I decided to drop and recreate the tables in sql, it cited line 10 of the product_repository:
+
+Traceback (most recent call last):
+  File "/Users/milludaltcasa/Desktop/codeclan_work/week_05/project_week_1/shire_selections_stock/console.py", line 24, in <module>
+    product_repository.save(product_1)
+  File "/Users/milludaltcasa/Desktop/codeclan_work/week_05/project_week_1/shire_selections_stock/repositories/product_repository.py", line 10, in save
+    values = [product.name, product.description, product.quantity, product.buying_cost, product.selling_price, product.manufacturer_id.id]
+AttributeError: 'int' object has no attribute 'id'
+
+In order to re-populate my table with its intended default values, I chopped off the ".id" and then added it back on when I had "flask run", otherwise I would not be able to save new products.
+
+Tomorrow I will mainly focus on CSS and presentation.
