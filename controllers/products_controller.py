@@ -34,6 +34,30 @@ def add_products():
     product_repository.save(new_products)
     return redirect("/inventory")
 
+
+#edit
+@products_blueprint.route("/inventory/<id>/edit")
+def edit_product(id):
+    product = product_repository.select(id)
+    manufacturers = product_repository.select_all()
+    return render_template("inventory/edit.html", product=product, manufacturers=manufacturers)
+
+#update
+@products_blueprint.route("/inventory/<id>", methods=["POST"])
+def update_product(id):
+    name = request.form["name"]
+    description = request.form["description"]
+    quantity = request.form["quantity"]
+    buying_cost = request.form["buying_cost"]
+    selling_price = request.form["selling_price"]
+    manufacturer_id = request.form["manufacturer"]
+    manufacturer = manufacturer_repository.select(manufacturer_id)
+    product = Product(name, description, quantity, buying_cost, selling_price, manufacturer, id)
+    product_repository.update(product)
+    return redirect("/inventory")
+
+
+
 #delete
 @products_blueprint.route("/inventory/<id>")
 def delete_product(id):

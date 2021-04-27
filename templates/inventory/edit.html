@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section>
+    <h2>UPDATE PRODUCT</h2>
+    <div>
+        <form action="/inventory/{{ product.id }}" method="POST">
+            <div>
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" value="{{ product.name }}">
+                <br>
+                <label for="description">DESCRIPTION</label>
+                <input type="text" id="description" name="description" value="{{ product.description }}">
+                <br>
+                <label for="quantity">QUANTITY</label>
+                <input type="text" id="quantity" name="quantity" value="{{ product.quantity }}">
+                <br>
+                <label for="buying_cost">BUYING COST</label>
+                <input type="text" id="buying_cost" name="buying_cost" value="{{ product.buying_cost }}">
+                <br>
+                <label for="selling_price">SELLING PRICE</label>
+                <input type="text" id="selling_price" name="selling_price" value="{{ product.selling_price }}">
+                <br>
+                <label for="manufacturer">MANUFACTURER</label>
+                <select id="manufacturer" name="manufacturer">
+                    {% for manufacturer in manufacturers %}
+                        <option value="{{ manufacturer.id }}"
+                            {% if product.manufacturer_id.id == manufacturer.id %} selected="selected"{% endif %}>
+                            {{ manufacturer.id }}
+                        </option>
+                    {% endfor %}
+                </select>
+                
+                <input type="submit" value="ENTER">
+            </div>
+        
+        </form>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

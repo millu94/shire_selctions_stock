@@ -31,7 +31,13 @@ def select(id):
     result = run_sql(sql, values)[0]
     manufacturer = manufacturer_repository.select(result["manufacturer_id"])
     product = Product(result["name"], result["description"], result["quantity"], result["buying_cost"], result["selling_price"], manufacturer, result["id"])
-    return products
+    return product
+
+def update(product):
+    sql = "UPDATE products SET (name, description, quantity, buying_cost, selling_price, manufacturer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.name, product.description, product.quantity, product.buying_cost, product.selling_price, product.manufacturer_id.id, product.id]
+    print(values)
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM products"
