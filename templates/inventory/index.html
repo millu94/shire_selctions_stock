@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>INVENTORY</h1>
+
+{% for product in products %}
+
+<section>
+    <div>
+        <li><p>{{ product.name }}</p></li>
+        <p>{{ product.description }}</p>
+        <p>{{ product.quantity }}</p>
+        <p>{{ product.buying_cost }}</p>
+        <p>{{ product.selling_price }}</p>
+        <p>{{ product. }}</p>
+        <p>{{ product. }}</p>
+        <a href="/manufacturer_info/{{ manufacturer.id }}/edit">EDIT</a>
+        <form action="/manufacturer_info/{{ manufacturer.id }}">
+            <input type="submit" value="DELETE">
+        </form>
+    </div>
+</section>
+
+
+{% endfor %}
+
+
+
+
+{% endblock %}
