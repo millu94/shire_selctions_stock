@@ -18,3 +18,5 @@ Finished working on the back end and moved on to the front end. Created html fil
 
 TUESDAY
 After the stand-up Craig shared with me a lab example with a working update function- "week_04/day_3/one_to_many_solution", after close inspection I realised that my select(id) function in manufacturers_repository.py was missing "result["id"]" in the values list, which would result in my update function (in the controller) returning an updated object with an "id" of none.
+
+As of 3.30pm I have got the add product tab working, now all that is left (in regards to the functions) is to set-up the edit/delete and start work on the styling.

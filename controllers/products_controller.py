@@ -33,3 +33,9 @@ def add_products():
     new_products = Product(name, description, quantity, buying_cost, selling_price, manufacturer)
     product_repository.save(new_products)
     return redirect("/inventory")
+
+#delete
+@products_blueprint.route("/inventory/<id>")
+def delete_product(id):
+    product_repository.delete(id)
+    return redirect("/inventory")
