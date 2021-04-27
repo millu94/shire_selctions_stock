@@ -10,6 +10,6 @@ products_blueprint = Blueprint("products", __name__)
 
 #index
 @products_blueprint.route("/inventory")
-def inventory()
+def inventory():
     products = product_repository.select_all()
     return render_template("inventory/index.html", products=products)

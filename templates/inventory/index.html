@@ -7,17 +7,18 @@
 
 <section>
     <div>
-        <li><p>{{ product.name }}</p></li>
+        <p>{{ product.name }}</p>
         <p>{{ product.description }}</p>
         <p>{{ product.quantity }}</p>
         <p>{{ product.buying_cost }}</p>
         <p>{{ product.selling_price }}</p>
-        <p>{{ product. }}</p>
-        <p>{{ product. }}</p>
-        <a href="/manufacturer_info/{{ manufacturer.id }}/edit">EDIT</a>
-        <form action="/manufacturer_info/{{ manufacturer.id }}">
+        <p>{{ product.manufacturer_id.id }}</p>
+        <p>{{ product.id }}</p>
+        <a href="/inventory/{{ product.id }}/edit">EDIT</a>
+        <form action="/inventory/{{ product.id }}">
             <input type="submit" value="DELETE">
         </form>
+        <br>
     </div>
 </section>
 

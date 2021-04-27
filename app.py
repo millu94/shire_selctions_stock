@@ -1,16 +1,13 @@
 from flask import Flask, render_template
 
 from controllers.manufacturers_controller import manufacturers_blueprint
-# from controllers.humans_controller import humans_blueprint
-# from controllers.zombies_controller import zombies_blueprint
-# from controllers.zombie_types_controller import zombie_types_blueprint
+from controllers.products_controller import products_blueprint
+
 
 app = Flask(__name__)
 
 app.register_blueprint(manufacturers_blueprint)
-# app.register_blueprint(humans_blueprint)
-# app.register_blueprint(zombies_blueprint)
-# app.register_blueprint(zombie_types_blueprint)
+app.register_blueprint(products_blueprint)
 
 @app.route("/")
 def main():
