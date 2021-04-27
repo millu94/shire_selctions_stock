@@ -33,9 +33,8 @@ def update_manufacturer(id):
     name = request.form["name"]
     contact_details = request.form["contact_details"]
     info = request.form["info"]
-    manu_id = manufacturer_repository.select(id)
-    updated_manufacturer = Manufacturer(name, contact_details, info, manu_id.id)
-    manufacturer_repository.update(updated_manufacturer)
+    manufacturer = Manufacturer(name, contact_details, info, id)
+    manufacturer_repository.update(manufacturer)
     return redirect("/manufacturer_info")
 
 #delete
