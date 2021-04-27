@@ -1,4 +1,4 @@
-shire_selctions_stock
+shire_selections_stock
 
 At CodeClan week 5 is project week so I decided to go with the shop brief: make a web application to be used by shop manager/owner/staff to keep track of their
 inventory. As I have recently set-up a small record label (which will be selling vinyl, t-shirts, and other merch) I hope that I personally will be able to use
@@ -15,3 +15,6 @@ Completed database set-up with sql schema, ran tests on my models, made basic re
 
 MONDAY
 Finished working on the back end and moved on to the front end. Created html files, linked them up with the controller, and worked on the manufacturers table. Most basic functions are working except for the update function: I have encountered my first big error that I hope to resolve tomorrow. (list index out of range)
+
+TUESDAY
+After the stand-up Craig shared with me a lab example with a working update function- "week_04/day_3/one_to_many_solution", after close inspection I realised that my select(id) function in manufacturers_repository.py was missing "result["id"]" in the values list, which would result in my update function (in the controller) returning an updated object with an "id" of none.
