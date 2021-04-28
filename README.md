@@ -33,3 +33,16 @@ AttributeError: 'int' object has no attribute 'id'
 In order to re-populate my table with its intended default values, I chopped off the ".id" and then added it back on when I had "flask run", otherwise I would not be able to save new products.
 
 Tomorrow I will mainly focus on CSS and presentation.
+
+WEDNESDAY
+I was occupied with responsibilities up until 3pm, and then all hell broke loose at the 11th hour. My update product function had gone completely rogue (it was partially working yesterday) and I had only just started working on CSS- which was a total mare. I got help from my partner's (little) brother (who has a job in soft. dev) and (at 9.30pm on a school night) after looking at it with me for 5mins pointed out that in my product_controller.py on line 42 i was calling:
+
+manufacturers = product_repository.select_all()
+
+when i should have been calling:
+
+manufacturers = manufacturer_repository.select_all()
+
+So my list of manufacturers in the update page was referencing the id's of the products. He then helped me get my CSS looking acceptable. Without his help I would not fully achieved the MVP and I would of had a very embarrassing presentation tomorrow.
+
+
