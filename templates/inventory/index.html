@@ -3,29 +3,53 @@
 
 <h1>INVENTORY</h1>
 
+
+
+<div align="center" class="content-table">
+    
+    
+    <table class="table-head inventory_list">
+        
+            <tr>
+              <th>NAME</th>
+              <th>DESCRIPTION</th>
+              <th>QUANTITY</th>
+              <th>BUYING-COST</th>
+              <th>SELLING-PRICE</th>
+              <th>MANUFACTURER</th>
+              <th>PRODUCTid</th>
+            </tr>
+          
+    </table>
+
+
 {% for product in products %}
 
-<section>
-    <div>
-        <p>{{ product.name }}</p>
-        <p>{{ product.description }}</p>
-        <p>{{ product.quantity }}</p>
-        <p>{{ product.buying_cost }}</p>
-        <p>{{ product.selling_price }}</p>
-        <p>{{ product.manufacturer_id.id }}</p>
-        <p>{{ product.id }}</p>
-        <a href="/inventory/{{ product.id }}/edit">EDIT</a>
-        <form action="/inventory/{{ product.id }}">
-            <input type="submit" value="DELETE">
-        </form>
+<table align="center" class="inventory_list">
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.buying_cost }}</td>
+        <td>{{ product.selling_price }}</td>
+        <td>{{ product.manufacturer_id.name }}</td>
+        <td>{{ product.id }}</td>
+        
         <br>
-    </div>
-</section>
+    </tr>
+    
+</table>
+<div id="editdeletebuttons">
+    <a href="/inventory/{{ product.id }}/edit">EDIT</a>
+    <form action="/inventory/{{ product.id }}">
+        <input type="submit" value="DELETE">
+    </form>
+</div>
 
 
 {% endfor %}
 
-
+</div>
 
 
 {% endblock %}

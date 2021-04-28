@@ -3,23 +3,47 @@
 
 <h1>MANUFACTURER INFO...</h1>
 
+<img src="static/images/logo.png" alt="Shire_Selections_Logo" class="bottom-left">
+
+
+<div align="center" class="content-table">
+<table class="table-head manufacturer_list">
+    
+        <tr>
+          <th>NAME</th>
+          <th>CONTACT-DETAILS</th>
+          <th>INFO</th>
+        </tr>
+      
+</table>
 {% for manufacturer in manufacturers %}
 
-<section>
-    <div>
-        <li><p>{{ manufacturer.name }}</p></li>
-        <p>{{ manufacturer.contact_details }}</p>
-        <p>{{ manufacturer.info }}</p>
-        <a href="/manufacturer_info/{{ manufacturer.id }}/edit">EDIT</a>
-        <form action="/manufacturer_info/{{ manufacturer.id }}">
-            <input type="submit" value="DELETE">
-        </form>
-    </div>
-</section>
+<table align="center" class="manufacturer_list">
+
+    <tr>
+        <td>{{ manufacturer.name }}</td>
+        <td>{{ manufacturer.contact_details }}</td>
+        <td>{{ manufacturer.info }}</td>
+        
+    </tr>
+</table>
+
+<div id="editdeletebuttons">
+    <a href="/manufacturer_info/{{ manufacturer.id }}/edit">EDIT</a>
+    <form action="/manufacturer_info/{{ manufacturer.id }}">
+        <input type="submit" value="DELETE">
+</form>
+</div>
+
 
 {% endfor %}
 
-<section>
+</div>
+
+
+
+
+<section class="add_manufacturer">
     <h2>ADD MANUFACTURER</h2>
     <div>
         <form action="/manufacturer_info" method="POST">

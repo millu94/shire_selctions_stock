@@ -27,6 +27,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     manufacturer = Manufacturer(result["name"], result["contact_details"], result["info"], result["id"])
+    print(manufacturer)
     return manufacturer
 
 def update(manufacturer):

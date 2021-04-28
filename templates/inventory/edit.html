@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+
 <section>
     <h2>UPDATE PRODUCT</h2>
     <div>
@@ -24,19 +26,18 @@
                 <label for="manufacturer">MANUFACTURER</label>
                 <select id="manufacturer" name="manufacturer">
                     {% for manufacturer in manufacturers %}
-                        <option value="{{ manufacturer.id }}"
-                            {% if product.manufacturer_id.id == manufacturer.id %} selected="selected"{% endif %}>
-                            {{ manufacturer.id }}
-                        </option>
+                        <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
                     {% endfor %}
                 </select>
+                    
+                    
+                    <input type="submit" value="ENTER">
+                </div>
                 
-                <input type="submit" value="ENTER">
-            </div>
-        
         </form>
     </div>
 </section>
+
 
 
 

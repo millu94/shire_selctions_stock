@@ -39,7 +39,7 @@ def add_products():
 @products_blueprint.route("/inventory/<id>/edit")
 def edit_product(id):
     product = product_repository.select(id)
-    manufacturers = product_repository.select_all()
+    manufacturers = manufacturer_repository.select_all()
     return render_template("inventory/edit.html", product=product, manufacturers=manufacturers)
 
 #update
