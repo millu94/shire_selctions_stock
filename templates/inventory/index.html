@@ -29,7 +29,12 @@
     <tr>
         <td>{{ product.name }}</td>
         <td>{{ product.description }}</td>
-        <td>{{ product.quantity }}</td>
+        <td>{{ product.quantity }}
+            {% if product.quantity <= 10 %}
+            <br>
+            <p><i>running out!</i></p>
+            {% endif %}
+        </td>
         <td>{{ product.buying_cost }}</td>
         <td>{{ product.selling_price }}</td>
         <td>{{ product.manufacturer_id.name }}</td>
